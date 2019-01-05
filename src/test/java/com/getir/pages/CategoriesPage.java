@@ -13,10 +13,10 @@ public class CategoriesPage extends BasePage {
     By titleCategories = By.className("android.widget.TextView");
 
     public void iShownCategoriesPage() {
-        assertThat("Categories page is not showen!", isElementPresent(driver.findElement(titleCategories),10) && driver.findElement(titleCategories).getText().equalsIgnoreCase("Categories"));
-        waitForVisibilityOf(txtCategory);
+        waitForVisibilityOf(txtCategory,30);
+        assertThat("Categories page is not shown!", driver.findElement(titleCategories).getText().equalsIgnoreCase("Categories"));
         List<MobileElement> categoryList = driver.findElements(txtCategory);
-        assertThat("Categories table is not showen!", categoryList.size() > 0);
+        assertThat("Categories table is not shown!", categoryList.size() > 0);
     }
 
     public void iClickCategory(String category) {

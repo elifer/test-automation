@@ -33,8 +33,8 @@ public class ProductsPage extends BasePage {
     }
 
     public void iShownProductsPage(String title) {
-        assertThat("Product page is not showen!", isElementPresent(driver.findElement(titleProduct),10) &&  driver.findElement(titleProduct).getText().equalsIgnoreCase(title));
-        waitForVisibilityOf(txtProduct);
+        waitForVisibilityOf(txtProduct,30);
+        assertThat("Product page is not showen!", driver.findElement(titleProduct).getText().equalsIgnoreCase(title));
         List<MobileElement> productList = driver.findElements(txtProduct);
         assertThat(title + "product table is not showen!", productList.size() > 0);
     }

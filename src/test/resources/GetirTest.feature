@@ -3,7 +3,7 @@ Feature: Getir App Functionality Test
 
   Scenario: Getir App Checked Add to Basket and Clear to Basket
     Given I am on the login page
-    And I type email "hello@getir.comabc"
+    And I type email "hello@getir.com"
     And I type password "hello"
     When I click login button
     Then I shown categories page

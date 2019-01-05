@@ -10,8 +10,8 @@ public class BasePage {
 
     public static AndroidDriver<MobileElement> driver;
 
-    protected void waitForVisibilityOf(By by) {
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+    protected void waitForVisibilityOf(By by,int timeout) {
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 

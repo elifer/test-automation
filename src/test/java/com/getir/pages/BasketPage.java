@@ -14,7 +14,7 @@ public class BasketPage extends BasePage {
     By txtEmptyBasket = By.id("empty_textview");
 
     public void iValidateCheckInBasket(String product) {
-        waitForVisibilityOf(txtProduct);
+        waitForVisibilityOf(txtProduct,30);
         boolean isFound = false;
         List<MobileElement> productList = driver.findElements(txtProduct);
 
